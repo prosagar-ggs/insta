@@ -1,21 +1,19 @@
 import React from 'react';
 import "./Login.css";
-
+import { Link } from "react-router-dom"
 
 const Login = () => {
     return(
         <div className="login">
-            <h1 className="login-title">Instagram</h1>
-            <form>
-                <label for="username">Username</label><br/>
-                <input type="text" name="username" id="username" value=""/><br/>
-                <label for="password">Password</label><br/>
-                <input type="password" name="password" id="password" value=""/><br/>
-                <button type='submit' className='submit'>Sign In</button>
-                <br/>
-                <span>© 2022 Instagram from Meta</span>
-            
+            <h1 className="login-tags title">Instagram</h1>
+            <form className='login-form'>
+                <input type="email" name="email" placeholder="Email" required /><br/>
+                <input type="password" name="password" placeholder="Password" required /><br/>
+                <Link to="/" style={{textDecoration:"none"}}>
+                <input type="submit" name="submit" value="Log In" className="login-button"/>
+                </Link>
             </form>
+            <p className='login-tags'>Don't have an account? <Link to="/signup" style={{textDecoration:"none"}}>Sign Up</Link></p>
         </div>
     )
 }
